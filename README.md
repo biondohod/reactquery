@@ -1,4 +1,4 @@
-## React query training
+## React query training. nothing else
 
 # React + TypeScript + Vite + React query
 
