@@ -11,3 +11,11 @@ export const getTodosIds = async () => {
 export const getTodo = async (id: number) => {
   return (await axiosInstanse.get<Todo>(`todos/${id}`)).data;
 }
+
+export const getTodosList = async () => {
+  return (await axiosInstanse.get<Todo[]>('todos')).data;
+}
+
+export const createTodo = async (data: Todo) => {
+  await axiosInstanse.post('todos', data);
+}

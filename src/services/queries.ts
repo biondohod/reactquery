@@ -1,5 +1,5 @@
 import { useQueries, useQuery } from "@tanstack/react-query";
-import { getTodo, getTodosIds } from "./api";
+import { getTodo, getTodosIds, getTodosList } from "./api";
 
 export const useTodosIds = () => {
   return useQuery({
@@ -16,5 +16,12 @@ export const useTodos = (ids: (number | undefined)[] | undefined) => {
         queryFn: () => getTodo(id!)
       }
     })
+  })
+}
+
+export const useTodosList = () => {
+  return useQuery({
+    queryKey: ["todosList"],
+    queryFn: getTodosList
   })
 }
