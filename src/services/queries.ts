@@ -12,16 +12,16 @@ export const useTodos = (ids: (number | undefined)[] | undefined) => {
   return useQueries({
     queries: (ids ?? []).map((id) => {
       return {
-        queryKey: ['todo', id],
-        queryFn: () => getTodo(id!)
-      }
-    })
-  })
-}
+        queryKey: ["todo", { id }],
+        queryFn: () => getTodo(id!),
+      };
+    }),
+  });
+};
 
 export const useTodosList = () => {
   return useQuery({
     queryKey: ["todosList"],
-    queryFn: getTodosList
-  })
-}
+    queryFn: getTodosList,
+  });
+};
